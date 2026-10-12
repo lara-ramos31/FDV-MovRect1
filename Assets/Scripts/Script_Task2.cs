@@ -3,7 +3,7 @@ using UnityEngine;
 public class ScriptTask2 : MonoBehaviour
 {
     public Transform goalObj;
-    public float speed;
+    public float speed = 1.0f;
     public Vector3 goalDir; // public to watch it in the editor
 
     // Update is called once per frame
