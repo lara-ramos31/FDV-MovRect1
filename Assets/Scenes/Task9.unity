@@ -1575,8 +1575,8 @@ GameObject:
   - component: {fileID: 2005942659}
   - component: {fileID: 2005942658}
   - component: {fileID: 2005942656}
-  - component: {fileID: 2005942661}
   - component: {fileID: 2005942660}
+  - component: {fileID: 2005942661}
   m_Layer: 0
   m_Name: MovingObject
   m_TagString: Untagged

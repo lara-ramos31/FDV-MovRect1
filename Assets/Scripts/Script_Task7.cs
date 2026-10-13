@@ -12,15 +12,14 @@ public class Script_Task7 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(goalObj.position);
         goalDir = goalObj.position - transform.position;
         Quaternion from = transform.rotation;
-        Quaternion to = Quaternion.LookRotation(goalDir);
+        Quaternion to = Quaternion.LookRotation(goalDir, transform.up);
         float speedScale = speed * Time.deltaTime;
         transform.rotation = Quaternion.Slerp(from, to, speedScale);
         if (debugRay) {
             Debug.DrawRay(transform.position, goalDir, Color.red);
         }
-        transform.position = Vector3.MoveTowards(transform.position, goalObj.position, speedScale);
+        transform.position = Vector3.MoveTowards(transform.position, goalObj.transform.position, speedScale);
     }
 }
