@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Script_Task6_MoveTowards : MonoBehaviour

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Script_Task8 : MonoBehaviour
 {
     public float speed = 1.0f;
+    public float accuracy = 0.5f;
     public bool debugRay = true;
     public Vector3 goalDir; // public to watch it in the editor
 
@@ -28,7 +29,7 @@ public class Script_Task8 : MonoBehaviour
         if (goalObjs == null || goalObjs.Length == 0) { return; }
         GameObject goalObj = goalObjs[goalIdx];
         goalDir = goalObj.transform.position - transform.position;
-        if (goalDir.magnitude == 0) { // move to the next one
+        if (goalDir.magnitude < accuracy) { // move to the next one
             UpdateMaterial(goalObj, inactiveMaterial);
             goalIdx = (goalIdx + 1) % goalObjs.Length;
             goalObj = goalObjs[goalIdx];
@@ -41,8 +42,9 @@ public class Script_Task8 : MonoBehaviour
         transform.rotation = Quaternion.Slerp(from, to, speedScale);
         if (debugRay) {
             Debug.DrawRay(transform.position, goalDir, Color.red);
+            Debug.DrawRay(transform.position, transform.forward, Color.green);
         }
-        transform.position = Vector3.MoveTowards(transform.position, goalObj.transform.position, speedScale);
+        transform.Translate(speedScale * Vector3.forward);
     }
 
     void UpdateMaterial(GameObject obj, Material newMat)

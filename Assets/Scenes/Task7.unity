@@ -750,6 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Script_Task7
   goalObj: {fileID: 456055898}
   speed: 3
+  accuracy: 1
   debugRay: 1
   goalDir: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

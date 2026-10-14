@@ -1406,6 +1406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script_Task8
   speed: 3
+  accuracy: 0.5
   debugRay: 1
   goalDir: {x: 0, y: 0, z: 0}
   goalObjs: []
